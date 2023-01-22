@@ -46,5 +46,6 @@ if [ "$CRONOP" != "${CRONOP#[Yy]}" ] ;then
     SCRIPT_DIR=$( dirname "$SCRIPT_DIR")
     SCRIPT_NAME="crontab-gen.sh"
     SCRIPT_DIR=$SCRIPT_DIR/$SCRIPT_NAME
+    sh $SCRIPT_DIR
 fi
 
