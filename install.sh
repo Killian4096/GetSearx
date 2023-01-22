@@ -18,7 +18,7 @@ sudo -H -u searx -i pip install -U wheel
 sudo -H -u searx -i pip install -U pyyaml
 
 
-sudo -H -u searx -i cd "/usr/local/searx/searx-src" ; pip install -e .
+sudo -H -u searx -i -- bash -c "cd /usr/local/searx/searx-src ; pip install -e .""
 
 mkdir -p "/etc/searx"
 
