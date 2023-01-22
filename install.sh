@@ -28,3 +28,8 @@ sed -i -e "s/ultrasecretkey/$(openssl rand -hex 16)/g" "/etc/searx/settings.yml"
 sed -i -e "s/{instance_name}/searx@$(uname -n)/g" "/etc/searx/settings.yml"
 
 sudo -H -u searx -i sh -c 'cd /usr/local/searx/searx-src && export SEARX_SETTINGS_PATH="/etc/searx/settings.yml"'
+
+echo "What ip would you like to bind searx to?(default=localhost):"
+read BINDIP
+echo Binding to $BINDIP
+sed -i -e "s/127.0.0.1/$BINDIP/g" "/etc/searx/settings.yml"
