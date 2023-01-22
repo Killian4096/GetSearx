@@ -33,3 +33,9 @@ echo "What ip would you like to bind searx to?(default=localhost):"
 read BINDIP
 echo Binding to $BINDIP
 sed -i -e "s/127.0.0.1/$BINDIP/g" "/etc/searx/settings.yml"
+
+echo "Would you like to install a cronjob for searx (y/N):"
+read CRONOP
+if [ "$CRONOP" != "${CRONOP#[Yy]}" ] ;then
+    pwd
+fi
