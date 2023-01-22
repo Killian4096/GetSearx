@@ -27,6 +27,6 @@ sudo sh searx-webapp.sh
 
 If you installed as a cronjob simply reboot and your searx instance should be accessable by typing into your browser:
 ```
-127.0.0.1:888
+127.0.0.1:8888
 ```
 Replacing 127.0.0.1 with the ip you have binded it to, or keeping it the same if this is your main machine.
