@@ -1,4 +1,5 @@
 #!/bin/bash
+#!/usr/bin/env bash
 
 apt-get install -y python3-dev python3-babel python3-venv uwsgi uwsgi-plugin-python3 git build-essential libxslt-dev zlib1g-dev libffi-dev libssl-dev shellcheck
 
@@ -41,7 +42,7 @@ sed -i -e "s/127.0.0.1/$BINDIP/g" "/etc/searx/settings.yml"
 echo "Would you like to install a cronjob for searx (y/N):"
 read CRONOP
 if [ "$CRONOP" != "${CRONOP#[Yy]}" ] ;then
-    DIRTEST={ dirname -- "$0" }
-    echo DIRTEST
+    SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+    echo $SCRIPT_DIR
 fi
 
