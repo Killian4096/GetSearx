@@ -31,7 +31,8 @@ sudo -H -u searx -i sh -c 'cd /usr/local/searx/searx-src && export SEARX_SETTING
 
 echo "What ip would you like to bind searx to?(default=localhost):"
 read BINDIP
-if [ "$BINDIP" == "" ] ;then
+if [ -z "$BINDIP" ]
+then
     $BINDIP = "127.0.0.1"
 fi
 echo Binding to $BINDIP
@@ -40,5 +41,6 @@ sed -i -e "s/127.0.0.1/$BINDIP/g" "/etc/searx/settings.yml"
 echo "Would you like to install a cronjob for searx (y/N):"
 read CRONOP
 if [ "$CRONOP" != "${CRONOP#[Yy]}" ] ;then
-    echo ${BASH_SOURCE[0]}
+    echo dirname -- "$0"
 fi
+
