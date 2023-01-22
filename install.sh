@@ -7,7 +7,7 @@ useradd --shell /bin/bash --system --home-dir "/usr/local/searx" searx
 mkdir "/usr/local/searx"
 chown -R "searx:searx" "/usr/local/searx"
 
-sudo -H -u searx -i　git clone "https://github.com/searx/searx.git" "/usr/local/searx/searx-src"
+sudo -H -u searx -i git clone "https://github.com/searx/searx.git" "/usr/local/searx/searx-src"
 
 sudo -H -u searx -i python3 -m venv "/usr/local/searx/searx-pyenv"
 sudo -H -u searx -i echo ". /usr/local/searx/searx-pyenv/bin/activate" >>  "/usr/local/searx/.profile"
