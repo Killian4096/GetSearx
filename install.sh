@@ -42,6 +42,7 @@ sed -i -e "s/127.0.0.1/$BINDIP/g" "/etc/searx/settings.yml"
 echo "Would you like to install a cronjob for searx (y/N):"
 read CRONOP
 if [ "$CRONOP" != "${CRONOP#[Yy]}" ] ;then
+    echo "Installing Cronjob"
     SCRIPT_DIR=$( realpath -- "$0" )
     SCRIPT_DIR=$( dirname "$SCRIPT_DIR")
     SCRIPT_NAME="crontab-gen.sh"
