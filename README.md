@@ -1,7 +1,7 @@
-#Overview
+# Overview
 A simple script to allow anyone to easily install a searx instance onto their Debian system, whether desktop, server, or virtual machine.
 
-#Install
+# Install
 On your Debian system, first install git:
 ```sh
 sudo apt-get install git
