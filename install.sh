@@ -18,7 +18,7 @@ sudo -H -u searx -i pip install -U wheel
 sudo -H -u searx -i pip install -U pyyaml
 
 
-sudo -H -u searx -i -- bash -c "cd /usr/local/searx/searx-src ; pip install -e .""
+sudo -H -u searx -i sh -c "cd /usr/local/searx/searx-src && pip install -e ."
 
 mkdir -p "/etc/searx"
 
@@ -27,4 +27,4 @@ cp "/usr/local/searx/searx-src/utils/templates/etc/searx/use_default_settings.ym
 sed -i -e "s/ultrasecretkey/$(openssl rand -hex 16)/g" "/etc/searx/settings.yml"
 sed -i -e "s/{instance_name}/searx@$(uname -n)/g" "/etc/searx/settings.yml"
 
-sudo -H -u searx -i cd /usr/local/searx/searx-src ; export SEARX_SETTINGS_PATH="/etc/searx/settings.yml"
+sudo -H -u searx -i sh -c 'cd /usr/local/searx/searx-src && export SEARX_SETTINGS_PATH="/etc/searx/settings.yml"'
